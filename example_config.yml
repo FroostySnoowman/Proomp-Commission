@@ -1,0 +1,18 @@
+General:
+    TOKEN: "" # Bot Token
+    STATUS: "" # online / idle / dnd / invisible
+    EMBED_COLOR: "" # HEX Color Code
+
+Translator:
+    SHOW_ORIGINAL_MESSAGE: True # True / False
+    SHOW_LANGUAGE_TYPE: "language-flag" # language-flag / language-code
+    SHOW_TRANSLATED_LANGUAGE: True # True / False
+    AUTHOR_DISPLAY: "username" # username / nickname
+    AUTOMATIC_DELETE_TRANSLATED_MESSAGE: False # True / False
+    AUTOMATIC_DELETE_TRANSLATED_MESSAGE_DURATION: "10d" # If "AUTOMATIC_DELETE_TRANSLATED_MESSAGE" is enabled
+    TRANSLATE_TYPE: "automatic" # command / automatic
+    TRANSLATOR_LANGUAGES: "tr,en,es,de,it" # This will work if This work if TRANSLATE_TYPE setting is automatic
+    WORK_IN_ALL_CATEGORIES: True # True / False
+
+    CATEGORIES: # Categories the bot will work in, if WORK_IN_ALL_CATEGORIES is False.
+        - ...
