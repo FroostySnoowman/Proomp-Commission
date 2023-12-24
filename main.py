@@ -3,7 +3,7 @@ import yaml
 import sys
 from discord.ext.commands import CommandNotFound
 from discord.ext import commands
-from cogs.checks.checks import checks
+from cogs.checks.checks import checks, bcolors
 
 with open('config.yml', 'r') as file:
     data = yaml.safe_load(file)
@@ -11,17 +11,6 @@ with open('config.yml', 'r') as file:
 embed_color = data["General"]["EMBED_COLOR"]
 status = data["General"]["STATUS"].lower()
 token = data["General"]["TOKEN"]
-
-class bcolors:
-    HEADER = '\033[95m'
-    OKBLUE = '\033[94m'
-    OKCYAN = '\033[96m'
-    OKGREEN = '\033[92m'
-    WARNING = '\033[93m'
-    FAIL = '\033[91m'
-    ENDC = '\033[0m'
-    BOLD = '\033[1m'
-    UNDERLINE = '\033[4m'
 
 if status == "online":
     _status = getattr(discord.Status, status)
@@ -358,4 +347,11 @@ async def on_command_error(ctx: commands.Context, error):
         return
     raise error
 
-client.run(token)
+try:
+    client.run(token)
+except:
+    sys.exit(f"""
+{bcolors.FAIL}{bcolors.BOLD}ERROR:{bcolors.ENDC}
+{bcolors.FAIL}Invalid Value For {bcolors.OKCYAN}TOKEN{bcolors.ENDC}
+{bcolors.WARNING}Please assure that you generated a new token and set it up with correct permissions and intents.{bcolors.ENDC}
+""")
