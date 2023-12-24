@@ -8,7 +8,7 @@ Translator Bot is designed to be the only translator bot that any server needs. 
 - `/translate message languages`: Translates the message into one, or multiple languages. Languages are split by `,`.
 
 `/translate Hello world! es,fr`
-> ¡Hola Mundo!
+> ¡Hola Mundo!<br>
 > Bonjour le monde!
 
 ## Getting Started
