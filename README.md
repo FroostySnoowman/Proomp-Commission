@@ -7,7 +7,10 @@ Translator Bot is designed to be the only translator bot that any server needs. 
 # Commands
 - `/translate message languages`: Translates the message into one, or multiple languages. Languages are split by `,`.
 
+**Example Usage:**
 `/translate Hello world! es,fr`
+
+**Example Response:**
 > ¡Hola Mundo!<br>
 > Bonjour le monde!
 
