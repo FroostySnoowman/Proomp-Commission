@@ -60,7 +60,7 @@ class TranslatorCog(commands.Cog):
             if show_translated_language:
                 for lang in langs:
                     translated = translate(message, lang)
-                    if show_language_type:
+                    if show_language_type == "language-flag":
                         flag = self.bot.language_flags.get(lang, "")
                         output = f"{flag} {translated}"
                     else:
