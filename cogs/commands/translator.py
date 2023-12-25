@@ -92,7 +92,10 @@ class TranslatorCog(commands.Cog):
             if author_display == "username":
                 embed.set_author(name=interaction.user, icon_url=interaction.user.display_avatar.url)
             else:
-                embed.set_author(name=interaction.user.nick, icon_url=interaction.user.display_avatar.url)
+                if interaction.user.nick:
+                    embed.set_author(name=interaction.user.nick, icon_url=interaction.user.display_avatar.url)
+                else:
+                    embed.set_author(name=interaction.user, icon_url=interaction.user.display_avatar.url)
             
             embed.timestamp = datetime.datetime.now()
 
