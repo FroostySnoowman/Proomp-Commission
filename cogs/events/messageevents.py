@@ -90,7 +90,10 @@ class MessageEventsCog(commands.Cog):
                 if author_display == "username":
                     embed.set_author(name=message.author, icon_url=message.author.display_avatar.url)
                 else:
-                    embed.set_author(name=message.author.nick, icon_url=message.author.display_avatar.url)
+                    if message.author.nick:
+                        embed.set_author(name=message.author.nick, icon_url=message.author.display_avatar.url)
+                    else:
+                        embed.set_author(name=message.author, icon_url=message.author.display_avatar.url)
                 
                 embed.timestamp = datetime.datetime.now()
 
