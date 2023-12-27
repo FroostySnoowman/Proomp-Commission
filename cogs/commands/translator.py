@@ -102,6 +102,7 @@ class TranslatorCog(commands.Cog):
             embed.set_footer(icon_url=interaction.guild.icon.url)
         
         await interaction.followup.send(embed=embed)
+        
         if automatic_delete_translated_message:
             msg = await interaction.original_response()
 
